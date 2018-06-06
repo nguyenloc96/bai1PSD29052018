@@ -126,7 +126,7 @@ a{
 .slide-title-4 li a{
     color: rgba(255,255,255,0.3);
 }
-.slide-title-4 li a:hover{
+.slide-title-4 li:hover a{
     color: #fff;
 }
 .slider{
@@ -303,32 +303,44 @@ a{
     position: relative;
 }
 .work-figure img{
-    position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 30;
 }
-
+.work-figure:hover .work-desc{
+    display: block;
+}
 .work-desc {
+    display: none;
+    background-color: rgba(14,180,147,.8);
+    color: #F1FAF8;
     position: absolute;
     text-align: center;
-    justify-content: center;
-    color: #fff;
-    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 100%;
-    z-index: 20;
+    line-height: 1.5;
 }
-
-.work-desc a{
-    border: 1px solid red;
+.work-icon{
+    margin-top: 70px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #F1FAF8;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
 }
-.work-desc i{
-    padding: 20px;
+.work-icon i{
+    font-size: 15px;
+    color: #fff;
+    line-height: 40px;
 }
-
+.work-desc h4{
+    margin-top: 20px;
+    text-shadow: 1px 1px #484D4B;
+}
+.work-desc p{
+    font-size: 15px;
+    text-shadow: 1px 1px #484D4B;
+}
 /* CSS Work */
 
 .team-title{
@@ -344,12 +356,61 @@ a{
     padding-left: 30px;
     padding-right: 30px;
 }
-.tean-figure img{
+.team-figure{
+    position: relative;
+    display: inline-block;
+}
+
+.figure-desc{
+    display: none;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    height: 69%;
+    background-color: rgba(14,180,147,.8);
+    padding: 0px 10px;
+}
+.figure-desc h4{
+    color: #F1FAF8;
+    margin-top: 20px;
+    font-size: 15px;
+    text-shadow: 1px 1px #484D4B;
+}
+.figure-desc p{
+    color: #F1FAF8;
+    margin-top: 10px;
+    font-size: 14px;
+    text-shadow: 1px 1px #484D4B;
+}
+.figure-list{
+    margin-top: 60px;
+}
+.figure-list li{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #4E6F5C;
+}
+.figure-list li i{
+    color: #F1FAF8;
+    line-height: 30px;
+}
+.team-figure:hover .figure-desc{
+    display: block;
+}
+.team-figure:hover .team-desc h3{
+    color: #1ea78d;
+}
+.team-figure img{
     width: 100%;
     height: 100%;
 }
 .team-desc{
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px;
     text-align: center;
     line-height: 1.5;
 }
@@ -365,13 +426,43 @@ a{
 }
 
 /* CSS FUN FACTS */
+#fun-fact{
+    width: 100%;
+    float: left;
+    background-color: rgba(6,32,51,.8);
+}
+
+#fun-fact .p-head .p-icon:before,
+#fun-fact .p-head .p-icon:after {
+    text-align: center;
+    justify-content: center;
+    margin-top: 0px;
+    content: "------------------";
+    color: #566573;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#fun-fact .p-head .p-icon:before {
+    right: 15px;
+}
+
+#fun-fact .p-head .p-icon:after {
+    left: 15px;
+}
+
+#fun-fact .p-head .p-icon i{
+    font-size: 18px;
+    color: #ccc;
+}
 .page-fun-fact{
     background-image: url("img/city.jpg");
     height: 100%;
 }
+
 .counter-item{
     text-align: center;
-    color: #fff;
+    color: #F1FAF8;
     line-height: 2;
 }
 .counter-icon{
@@ -433,18 +524,16 @@ a{
 }
 
 .input-name input{
-    padding: 0px 10px 0px 10px;
     border: none;
     border-bottom: 1px solid #DCDFDE;
-    font-size: 16px;
+    font-size: 14px;
     height: 30px;
     width: 100%;
 }
 .input-email input{
-    padding: 0px 10px 0px 10px;
     border: none;
     border-bottom: 1px solid #DCDFDE;
-    font-size: 16px;
+    font-size: 14px;
     height: 30px;
     width: 100%;
 }
@@ -452,10 +541,9 @@ a{
     margin-top: 20px;
 }
 .input-message textarea{
-    padding: 0px 10px 0px 10px;
     border: none;
     border-bottom: 1px solid #DCDFDE;
-    font-size: 16px;
+    font-size: 14px;
     height: 50px;
     width: 100%;
 }
@@ -475,6 +563,7 @@ a{
     font-size: 22px;
 }
 .btn-send p{
+    padding-top: 2px;
     float: right;
     color: #6E6E6E;
 }
@@ -482,7 +571,7 @@ a{
     float: left;
     width: 10%;
     padding-left: 10px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .social li{
     line-height: 2;
@@ -510,7 +599,7 @@ input:focus, textarea:focus, select:focus{
 }
 
 .f-contact-left{
-    padding: 10px 40px 30px 40px;
+    padding: 10px 30px 30px 30px;
 }
 
 .f-contact-right{
@@ -567,8 +656,12 @@ input:focus, textarea:focus, select:focus{
     float: right;
     padding: 5px;
 }
+#counter, #row-contact{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 /* Responsive */
-@media screen and (min-width: 768px){
+@media screen and (min-width: 769px){
     .menu{
         height: 70px;
     }
@@ -620,11 +713,49 @@ input:focus, textarea:focus, select:focus{
     }
     .team-desc p{
         font-size: 13px;
-        color: #CACFD2;
+        color: #484D4B;
+    }
+    #counter{
+        margin-top: 20px;
+        margin-bottom: 80px;
+        padding: 10px 150px;
+    }
+    .contact-content{
+        padding: 0px 100px 0px 150px;
+    }
+    .contact-address h3{
+        font-size: 18px;
+    }
+    .contact-address p{
+        font-size: 13px;
+    }
+    .contact-form h3{
+        font-size: 19px;
+    }
+    .btn-send p{
+        font-size: 15px;
+    }
+    .contact{
+        float: left;
+        width: 100%;
+        padding: 0px 50px;
+        font-size: 13px;
+    }
+    .f-support{
+        float: left;
+        padding: 30px;
+    }
+    .f-support div{
+        padding: 0;
+        margin-top: 50px;
+    }
+    .f-support div:first-child{
+        padding-left: 10px;
+        border-left: 1px solid rgb(102, 120, 138);
     }
 }
-
-@media screen and (min-width: 481px) and (max-width: 767px){
+/*Tablet*/
+@media screen and (min-width: 481px) and (max-width: 768px){
     .list-menu{
         margin-left: 15px;
         margin-top: 50px;
@@ -676,6 +807,14 @@ input:focus, textarea:focus, select:focus{
     }
     .service-desc p{
         width: 60%;
+        font-size: 14px;
+    }
+    .work-link li:hover{
+        border-radius: 5px;   
+        background-color: #1ea78d;
+    }
+    .work-link li:hover a{
+        color: #fff;
     }
     .work-title p{
         font-size: 17px;
@@ -683,21 +822,62 @@ input:focus, textarea:focus, select:focus{
     .work-figure{
         width: 50%;
     }
+    .work-icon{
+        width: 60px;
+        height: 60px;
+    }
+    .work-icon i{
+        line-height: 60px;
+        font-size: 20px;
+    }
+    .work-desc h4{
+        font-size: 20px;
+    }
+    .work-desc p{
+        font-size: 20px;
+    }
     .team-title p{
         font-size: 17px;
     }
-    .tean-figure{
+    .team-figure{
         width: 100%;
         text-align: center;
     }
-    .tean-figure img{
+    .team-figure img{
         width: 50%;
         height: 50%;
+    }
+    .figure-desc{
+        padding: 20px;
+        margin: 0 auto;
+        width: 50%;
+        height: 81%;
+    }
+    .figure-desc h4{
+        margin-top: 80px;
+        font-size: 20px;
+    }
+    .figure-desc p{
+        font-size: 20px;
+    }
+    .figure-list li{
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 60px;
+        height: 60px;
+    }
+    .figure-list li i{
+        line-height: 60px;
+        font-size: 22px;
+    }
+    #counter{
+        padding: 0px 100px;
     }
     .counter-item{
         width: 50%;
     }
     .counter-icon{
+        margin-top: 10px;
         width: 75px;
         height: 75px;
     }
@@ -715,7 +895,9 @@ input:focus, textarea:focus, select:focus{
         margin-top: 20px;
         padding-left: 0px;
     }
-    
+    .contact-social {
+        padding-left: 0px;
+    }
     .social{
         text-align: center;
     }
@@ -735,7 +917,7 @@ input:focus, textarea:focus, select:focus{
         text-align: center;
     }
 }
-
+/*Smart Phone*/
 @media screen and (max-width: 480px){
     .list-menu{
         margin-top: 50px;
@@ -811,24 +993,63 @@ input:focus, textarea:focus, select:focus{
     .work-link li a{
         font-size: 13px;
     }
-    .tean-figure{
+    .work-link li:hover{
+        border-radius: 5px;   
+        background-color: #1ea78d;
+    }
+    .work-link li:hover a{
+        color: #fff;
+    }
+    .work-desc{
+        margin: 0px 20px;
+    }
+    .figure-desc{
+        margin: 0px 15px;
+        height: 78%;
+    }
+    .figure-desc h4{
+        margin-top: 50px;
+    }
+    .figure-list li{
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 50px;
+        height: 50px;
+    }
+    .figure-list li i{
+        line-height: 50px;
+        font-size: 18px;
+    }
+    .team-figure{
         width: 100%;
         text-align: center;
     }
-    .tean-figure img{
+    .team-figure img{
         width: 90%;
         height: 90%;
+    }
+    #counter{
+        padding: 0px 20px;
     }
     .counter-item{
         width: 50%;
     }
     .counter-icon{
-        width: 75px;
-        height: 75px;
+        width: 60px;
+        height: 60px;
+        margin-top: 10px;
+    }
+    .counter-detail{
+        font-size: 22px;
+    }
+    .counter-item p{
+        font-size: 14px;
     }
     .counter-icon i{
-        line-height: 75px;
+        line-height: 60px;
+        font-size: 20px;
     }
+
     .contact-title p{
         font-size: 15px;
     }
@@ -850,12 +1071,15 @@ input:focus, textarea:focus, select:focus{
     .input-email{
         margin-top: 15px;
     }
+    .contact-social {
+        padding-left: 0px;
+    }
     .social{
         text-align: center;
     }
     .social li{
         display: inline-block;
-        padding: 10px 15px;
+        padding: 10px 10px;
     }
     .social li i{
         font-size: 28px;

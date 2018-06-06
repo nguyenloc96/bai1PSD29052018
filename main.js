@@ -10,6 +10,7 @@ $(document).ready(function(){
     });
     
     // Change slide-bar
+    /*
     var interval;
   	function start(){
     	interval = setInterval(function(){
@@ -38,7 +39,11 @@ $(document).ready(function(){
         $('.slide-title-1 div[per-slide]').eq(currPage).addClass('selected');
         $(this).addClass('select');
     });
-
+    */
+    $('.change-slide li').click(function(){
+        $('.change-slide li').removeClass('select');
+        $(this).addClass('select');
+    });
     $('.change-list li').click(function(){
         $('.change-list li').removeClass('select');
         $(this).addClass('select');
